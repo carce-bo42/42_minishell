@@ -104,9 +104,6 @@ static void	expand_var_name(char **line, char **filename, int *len, t_nod *node)
 
 void	write_str_w_envar(char **line, char **filename, int *len, t_nod *node)
 {
-	char	*aux;
-
-	aux = *filename;
 	while (*len > 0 && node->launch == OK)
 	{
 		if (**line == '\\' || **line == '&')

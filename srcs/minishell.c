@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
+t_shell	*g_shell;
 
 static char	*construct_prompt(void)
 {
@@ -65,11 +66,9 @@ void	reset_vars(void)
 
 int	main(int argc, char *argv[], char *env[])
 {
-	t_shell		*shell;
-
 	if (argc != 1)
 		call_error();
-	shell = init_megastruct(argc, argv, env);
+	init_megastruct(argc, argv, env);
 	while (1)
 	{
 		ft_signal_main();

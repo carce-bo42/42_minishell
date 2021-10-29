@@ -108,21 +108,17 @@ char	**clone_environment(char **env, int c)
 	return (out);
 }
 
-t_shell	*init_megastruct(int ac, char **av, char **env)
+void	init_megastruct(int ac, char **av, char **env)
 {
-	t_shell	*shell;
-
 	(void)av;
-	shell = malloc(sizeof(t_shell));
-	g_shell = shell;
+	g_shell = malloc(sizeof(t_shell));
 	g_shell->p_lst = NULL;
-	shell->ac = ac;
-	shell->env = clone_environment(env, OK);
-	shell->q_mark_err = 0;
-	shell->n_proc = 0;
-	shell->envar = new_env_var(ft_strdup("?"), ft_itoa(g_shell->q_mark_err));
-	shell->status = ON_READ;
-	shell->assign_error = OK;
-	shell->pmt = NULL;
-	return (g_shell);
+	g_shell->ac = ac;
+	g_shell->env = clone_environment(env, OK);
+	g_shell->q_mark_err = 0;
+	g_shell->n_proc = 0;
+	g_shell->envar = new_env_var(ft_strdup("?"), ft_itoa(g_shell->q_mark_err));
+	g_shell->status = ON_READ;
+	g_shell->assign_error = OK;
+	g_shell->pmt = NULL;
 }

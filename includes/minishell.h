@@ -134,11 +134,11 @@ typedef struct s_shell
 	char	*pmt;
 }				t_shell;
 
-t_shell	*g_shell;
+extern t_shell	*g_shell;
 
 // inicialise
 
-t_shell	*init_megastruct(int ac, char **av, char **env);
+void	init_megastruct(int ac, char **av, char **env);
 t_nod	*create_pnode(char **aux, char **str, int *n_proc);
 t_var	*new_env_var(char *name, char *value);
 
