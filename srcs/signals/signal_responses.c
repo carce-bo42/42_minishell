@@ -19,6 +19,7 @@ void	ft_signal_ctrl_c(int sig)
 	rl_replace_line("", 0);
 	rl_on_new_line();
 	rl_redisplay();
+	update_q_mark_variable(1);
 }
 
 void	ft_signal_stop_all_process_launch(int sig)
